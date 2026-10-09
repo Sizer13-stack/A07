@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== "production") globalForMongo._mongo = client;
 const db = client.db();
 
 export const auth = betterAuth({
-  database: mongodbAdapter(db, { client }),
+  database: mongodbAdapter(db),
   baseURL: process.env.BETTER_AUTH_URL,
   secret: process.env.BETTER_AUTH_SECRET,
   emailAndPassword: { enabled: true, minPasswordLength: 8, autoSignIn: false },
