@@ -1,10 +1,10 @@
 "use client";
 import { use } from "react";
 import Link from "next/link";
-import EmptyState from "@/components/EmptyState";
-import { getProduct } from "@/lib/api";
-import { useAsync } from "@/lib/hooks";
-import { bn, changeBadge, taka, unitLabel } from "@/lib/format";
+import EmptyState from "../../../components/EmptyState";
+import { getProduct } from "../../../lib/api";
+import { useAsync } from "../../../lib/hooks";
+import { bn, changeBadge, taka, unitLabel } from "../../../lib/format";
 
 export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);

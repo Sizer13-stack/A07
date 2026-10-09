@@ -1,12 +1,12 @@
 "use client";
 import { use, useMemo, useState } from "react";
-import EmptyState from "@/components/EmptyState";
-import ProductGrid from "@/components/ProductGrid";
-import SortSelect, { SortKey } from "@/components/SortSelect";
-import { GridSkeleton } from "@/components/Skeletons";
-import { getCategory, getProductsByCategory } from "@/lib/api";
-import { useAsync } from "@/lib/hooks";
-import { bn } from "@/lib/format";
+import EmptyState from "../../../components/EmptyState";
+import ProductGrid from "../../../components/ProductGrid";
+import SortSelect, { SortKey } from "../../../components/SortSelect";
+import { GridSkeleton } from "../../../components/Skeletons";
+import { getCategory, getProductsByCategory } from "../../../lib/api";
+import { useAsync } from "../../../lib/hooks";
+import { bn } from "../../../lib/format";
 
 export default function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
