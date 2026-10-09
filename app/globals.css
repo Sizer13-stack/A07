@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; scroll-padding-top: 9rem; }
+body { font-family: "Hind Siliguri", system-ui, sans-serif; background: #f0f5f0; color: #1d271f; }
+.container-x { @apply mx-auto w-full max-w-6xl px-4; }
