@@ -29,8 +29,9 @@ export function unitShort(u: string) {
 }
 
 export function changeBadge(c: { dir: string; pct: number }) {
-  if (c.dir === "up") return { text: `▲ ${bn(c.pct)}%`, cls: "text-brandDark bg-[#e7f6ec]" , tone: "up" as const };
-  if (c.dir === "down") return { text: `▼ ${bn(c.pct)}%`, cls: "text-rise bg-[#fdecec]", tone: "down" as const };
+  const pct = Math.abs(c.pct);
+  if (c.dir === "up") return { text: `▲ ${bn(pct)}%`, cls: "text-brandDark bg-[#e7f6ec]", tone: "up" as const };
+  if (c.dir === "down") return { text: `▼ ${bn(pct)}%`, cls: "text-rise bg-[#fdecec]", tone: "down" as const };
   return { text: `— ${bn(0)}%`, cls: "text-gray-500 bg-gray-100", tone: "flat" as const };
 }
 
