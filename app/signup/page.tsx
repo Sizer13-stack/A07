@@ -18,7 +18,7 @@ export default function SignUp() {
     const fail = (m: string) => { setErr(m); toast.error(m); };
     if (!f.name.trim()) return fail("আপনার নাম দিন");
     if (!/^\S+@\S+\.\S+$/.test(f.email)) return fail("সঠিক ইমেইল দিন");
-    if (f.password.length < 6) return fail("পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে");
+    if (f.password.length < 8) return fail("পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে");
     setBusy(true);
     const { error } = await signUp.email({ name: f.name.trim(), email: f.email, password: f.password });
     setBusy(false);
@@ -38,7 +38,7 @@ export default function SignUp() {
           <label className="form-control"><span className="label-text mb-1">ইমেইল</span>
             <input type="email" className="input input-bordered" placeholder="you@example.com" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} /></label>
           <label className="form-control"><span className="label-text mb-1">পাসওয়ার্ড</span>
-            <input type="password" className="input input-bordered" placeholder="কমপক্ষে ৬ অক্ষর" value={f.password} onChange={(e) => setF({ ...f, password: e.target.value })} /></label>
+            <input type="password" className="input input-bordered" placeholder="কমপক্ষে ৮ অক্ষর" value={f.password} onChange={(e) => setF({ ...f, password: e.target.value })} /></label>
           {err && <p className="text-sm text-rise">{err}</p>}
           <button disabled={busy} className="btn btn-primary w-full rounded-full">{busy ? <span className="loading loading-spinner loading-sm" /> : "সাইন আপ"}</button>
         </form>
